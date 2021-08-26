@@ -56,9 +56,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <span>Perfil</span>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="perfil_adm.php">Meu Perfil</a>
-                    <a class="dropdown-item" href="editar_perfil_adm.php">Editar Perfil</a>
-                    <a class="dropdown-item" href="alterar_password.php">Alterar Password</a>
+                    <a class="dropdown-item" href="perfil_Empresa.php">Meu Perfil</a>
+                    <a class="dropdown-item" href="editar_perfil_empresa.php">Editar Perfil</a>
+                    <a class="dropdown-item" href="alterar_password_empresa.php">Alterar password</a>
                     <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </li>
@@ -66,9 +66,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="dropdown mobile-user-menu float-right">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="perfil_adm.php">Meu Perfil</a>
-                <a class="dropdown-item" href="editar_perfil_adm.php">Editar Perfil</a>
-                <a class="dropdown-item" href="alterar_password.php">Alterar Password</a>
+                <a class="dropdown-item" href="perfil_Empresa.php">Meu Perfil</a>
+                <a class="dropdown-item" href="editar_perfil_empresa.php">Editar Perfil</a>
+                <a class="dropdown-item" href="alterar_password_empresa.php">Alterar password</a>
                 <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
         </div>
@@ -79,29 +79,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <ul>
                     <li class="menu-title">Principal</li>
                     <li>
-                        <a href="perfil_adm.php"><i class="fa fa-user"></i> <span>Perfil</span></a>
+                        <a href="perfil_Empresa.php"><i class="fa fa-user"></i> <span>Perfil</span></a>
                     </li>
                     <li>
-                        <a href="gerir_utilizador.php"> <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
-  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-</svg>
-                            Gerir Utilizador</span></a>
+                        <a href="InserirOfertas.php"> <span>Inserir Ofertas </span></a>
                     </li>
-
                     <li>
-                        <a href="gerir_oferta_adm.php"> <span>Gerir Oferta</span></a>
+                        <a href="candidatura_emp.php"> <span>Candidaturas </span></a>
                     </li>
-
                     <li>
-                        <a href="inserir_area_adm.php"> <span>Gerir Area</span></a>
-                    </li>
-
-
-                    <li>
-                        <a href="inserir_local_adm.php"> <span>Gerir Local</span></a>
+                        <a href="oferta_e.php"> <span>Ofertas</span></a>
                     </li>
 
                 </ul>

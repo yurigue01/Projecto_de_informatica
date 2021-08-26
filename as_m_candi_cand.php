@@ -119,6 +119,7 @@ if(isset($_SESSION["loggedin"])){
                                 <th>Estado</th>
                                 <th>Data de Criação</th>
                                 <th>Mensagem</th>
+                                <th>Data</th>
 
 
 
@@ -148,9 +149,10 @@ if(isset($_SESSION["loggedin"])){
             <td>'.$row['Estado'].'</td>
             <td>'.$row['Data_Criacao'].'</td>
                <td>'.$row['Mensagem'].'</td>
+                 <td>'.$row['Data'].'</td>
             
    
-            <td><a href="eliminar_candidatura_cand.php?id='.$row['ID_candidatura'].'"  class="  fa fa-trash-o red_color"> Eliminar</a></td>
+            <td><a href="eliminar_as_minha_candi_cand.php?ID_candidatura='.$row['ID_candidatura'].'"  class="  fa fa-trash-o red_color"> Eliminar</a></td>
             <td><a href="editar_candidatura_cand.php?id='.$row['ID_candidatura'].'" class="fa fa-wrench green_color"> Alterar</a></td>
             
             </tr>';

@@ -87,20 +87,20 @@ $pdoConfig = require_once "config.php";
                     <span>Perfil</span>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="profile.html">Meu Perfil</a>
-                    <a class="dropdown-item" href="Ca.html">Editar Perfil</a>
-                    <a class="dropdown-item" href="change-password.html">Alterar Password</a>
-                    <a class="dropdown-item" href="Login/login.html">Logout</a>
+                    <a class="dropdown-item" href="perfil_candidato.php">Meu Perfil</a>
+                    <a class="dropdown-item" href="editar_perfil.php">Editar Perfil</a>
+                    <a class="dropdown-item" href="alterar_password.php">Alterar Password</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </li>
         </ul>
         <div class="dropdown mobile-user-menu float-right">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="profile.html">Meu Perfil</a>
-                <a class="dropdown-item" href="Ca.html">Editar Perfil</a>
-                <a class="dropdown-item" href="change-password.html">Alterar Password</a>
-                <a class="dropdown-item" href="../../Login/login.html">Logout</a>
+                <a class="dropdown-item" href="perfil_candidato.php">Meu Perfil</a>
+                <a class="dropdown-item" href="editar_perfil.php">Editar Perfil</a>
+                <a class="dropdown-item" href="alterar_password.php">Alterar Password</a>
+                <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
         </div>
     </div>
@@ -110,16 +110,14 @@ $pdoConfig = require_once "config.php";
                 <ul>
                     <li class="menu-title">Principal</li>
                     <li>
-                        <a href="profile.html"><i class="fa fa-user"></i> <span>Perfil</span></a>
+                        <a href="perfil_candidato.php"><i class="fa fa-user"></i> <span>Perfil</span></a>
+                    </li>
+
+                    <li>
+                        <a href="oferta_de_emprego_cand.php"> <span>Ofertas Emprego/Estagio </span></a>
                     </li>
                     <li>
-                        <a href="../../assets/Instruction%20Manual%20for%20Safety%20and%20Comfort.pdf"><i class="fa fa-book"></i> <span>CV</span></a>
-                    </li>
-                    <li>
-                        <a href="Orfertas_emprego.html"> <span>Ofertas Emprego/Estagio </span></a>
-                    </li>
-                    <li>
-                        <a href="CandidaturaAluno.html"> <span>Candidaturas</span></a>
+                        <a href="as_m_candi_cand.php"> <span>Candidaturas</span></a>
                     </li>
 
                 </ul>
@@ -189,15 +187,15 @@ $pdoConfig = require_once "config.php";
                                             </div>
                                             <span class="title">Empresa: </span>
                                             <span class="title"> '.$row['Nome'].'</span>
-                                            <div class="staff-id">Título :</div>
-                                             <span class="title"> '.$row['Titulo'].'</span>
+                                            <div class="staff-id">Título: '.$row['Titulo'].'</div>
+                                             <span class="title"> </span>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <ul class="personal-info">
                                             <li>
                                                 <p>Descrição:</p>
-                                                <p>'.$row['Descricao'].' .</p>
+                                                <p> '.$row['Descricao'].' </p>
                                             </li>
 
                                         </ul>
@@ -225,6 +223,11 @@ $pdoConfig = require_once "config.php";
                                     <div class="experience-box">
                                         <textarea type="text" style="width: 55%;" name="m_Mensagem" cols="10" rows="3"></textarea>
                                     </div>
+                                    <div class="experience-box">
+                                        <textarea type="text" style="width: 10%;" name="m_Oferta_ID_oferta1" cols="10" rows="3">'.$idyx.'</textarea>
+                                        
+                                    </div>
+      
                                     </div>
                                       <button type="submit" class="button is-block is-link is-large ">Registar Receita</button>
                                         </form>
