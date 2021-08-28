@@ -120,6 +120,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                 <th>Email</th>
                                 <th>Telefone</th>
                                 <th>Data</th>
+                                <th>CV</th>
 
 
 
@@ -149,11 +150,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               <td>'.$row['Email'].'</td>
                <td>'.$row['Telefone'].'</td>
                 <td>'.$row['Data'].'</td>
+                 <td><a href="CV/'.$row['cv'].'"> Obter (CV)</a></td>
              
             
    
-            <td><a href="eliminar_oferta_adm.php?ID_oferta='.$row['ID_oferta'].'"  class="  fa fa-trash-o red_color"> Eliminar</a></td>
-            <td><a href="editar_oferta_adm.php?ID_oferta='.$row['ID_oferta'].'" class="fa fa-wrench green_color"> Editar</a></td>
+            <td><a href="eliminar_candidatura_emp.php?id='.$row['ID_candidatura'].'"  class="  fa fa-trash-o red_color"> Eliminar</a></td>
+ 
             
             </tr>';
                                 }

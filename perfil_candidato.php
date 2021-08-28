@@ -49,6 +49,7 @@ $cp = $bus['Codigo_Postal'];
 $Nif = $bus['Nif'];
 $Habilitacao = $bus['Habilitacoes'];
 $imagem = $bus['imagem'];
+$cv= $bus['cv'];
 
 
 
@@ -73,7 +74,7 @@ $imagem = $bus['imagem'];
         <ul class="nav user-menu float-right">
             <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="imagem/<?php echo"$imagem" ?>" width="40" alt="Admin">
+                        <span class="user-img"><img class="rounded-circle" src="imagem/<?php echo"$imagem" ?>" width="40" alt="">
 							<span class="status online"></span></span>
                     <span><?php echo"$username" ?> </span>
                 </a>
@@ -111,7 +112,6 @@ $imagem = $bus['imagem'];
                     <li>
                         <a href="as_m_candi_cand.php"> <span>Candidaturas</span></a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -142,7 +142,7 @@ $imagem = $bus['imagem'];
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="profile-info-left">
-                                            <h3 class="user-name m-t-0 mb-0"><?php echo"$Nome" ?> </h3>
+                                            <h3 class="user-name m-t-0 mb-0"><?php echo"$Nome" ?>  </h3>
                                         </div>
                                         <a href="editar_foto_cand.php">Editar Foto
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -199,8 +199,7 @@ $imagem = $bus['imagem'];
             <div class="profile-tabs">
                 <ul class="nav nav-tabs nav-tabs-bottom">
                     <li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Línguas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#bottom-tab3" data-toggle="tab">Aptidões e Competências</a></li>
+
                 </ul>
 
                 <div class="tab-content">
@@ -208,20 +207,10 @@ $imagem = $bus['imagem'];
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-box">
-                                    <a href="html" class="card-title" >Educação e Formação</a>
+                                    <a href="cv_cand.php" class="card-title" >Curriculum Vitae (CV)</a>
                                     <div class="experience-box">
                                         <ul class="experience-list">
-                                            <li>
-                                                <div class="experience-user">
-                                                    <div class="before-circle"></div>
-                                                </div>
-                                                <div class="experience-content">
-                                                    <div class="timeline-content">
-                                                        <a>Ainda não foi introduzida qualquer Educação e Formação</a>
 
-                                                    </div>
-                                                </div>
-                                            </li>
                                             <li>
 
                                                 <div class="experience-content">
@@ -233,96 +222,8 @@ $imagem = $bus['imagem'];
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="card-box mb-0">
-
-                                    <a href="rof.html" class="card-title" >Experiência Profissionais</a>
-                                    <div class="experience-box">
-                                        <ul class="experience-list">
-                                            <li>
-                                                <div class="experience-user">
-                                                    <div class="before-circle"></div>
-                                                </div>
-                                                <div class="experience-content">
-
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="experience-user">
-                                                    <div class="before-circle"></div>
-                                                </div>
-                                                <div class="experience-content">
-                                                    <div class="timeline-content">
-                                                        <a>Ainda não foi introduzida qualquer Experiência Profissional</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="experience-user">
-
-                                                </div>
-                                                <div class="experience-content">
-
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="bottom-tab2">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card-box">
-                                    <a href=">Línguas</a>
-                                        <div class="experience-box">
-                                    <ul class="experience-list">
-                                        <li>
-                                            <div class="experience-user">
-                                                <div class="before-circle"></div>
-                                            </div>
-                                            <div class="experience-content">
-                                                <div class="timeline-content">
-                                                    <a>Ainda não foi introduzida qualquer Língua</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="experience-user">
-
-                                            </div>
-                                            <div class="experience-content">
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="bottom-tab3">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card-box">
-                                <a href="tml">Aptidões e Competências</a>
-
-                                <div class="experience-box">
-                                    <ul class="experience-list">
-                                        <li>
-
-                                            <div class="experience-content">
-
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
 
 
-
-                            </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

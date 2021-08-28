@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Codigo_Postal= filter_input(INPUT_POST, 'x_Codigo_Postal');
     $Nif= filter_input(INPUT_POST, 'x_Nif');
     $imagem= filter_input(INPUT_POST, 'x_imagem');
-    $Habilitacoes= filter_input(INPUT_POST, 'x_Habilitacoes');
+
    
 
 
