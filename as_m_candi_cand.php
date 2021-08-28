@@ -153,7 +153,6 @@ if(isset($_SESSION["loggedin"])){
             
    
             <td><a href="eliminar_as_minha_candi_cand.php?ID_candidatura='.$row['ID_candidatura'].'"  class="  fa fa-trash-o red_color"> Eliminar</a></td>
-            <td><a href="editar_candidatura_cand.php?id='.$row['ID_candidatura'].'" class="fa fa-wrench green_color"> Alterar</a></td>
             
             </tr>';
                                 }

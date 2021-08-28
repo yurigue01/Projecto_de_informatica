@@ -39,7 +39,7 @@ if($_FILES['arquivo']['error'] != 0){
 $extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 if(array_search($extensao, $_UP['extensoes'])=== false){
     echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_cand.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_emp.php'>
 					<script type=\"text/javascript\">
 						alert(\"A imagem não foi cadastrada extesão inválida.\");
 					</script>
@@ -49,7 +49,7 @@ if(array_search($extensao, $_UP['extensoes'])=== false){
 //Faz a verificação do tamanho do arquivo
 else if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
     echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_cand.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_emp.php'>
 					<script type=\"text/javascript\">
 						alert(\"Arquivo muito grande.\");
 					</script>
@@ -69,22 +69,22 @@ else{
     //Verificar se é possivel mover o arquivo para a pasta escolhida
     if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta']. $nome_final)){
         //Upload efetuado com sucesso, exibe a mensagem
-        $id12=$_SESSION["ID_utilizador"];
-        $query = mysqli_query($link, "UPDATE utilizador SET imagem='$nome_final'  WHERE ID_utilizador = '$id12' ");
+        $id11=$_SESSION["ID_empresa"];
+        $query = mysqli_query($link, "UPDATE empresa SET imagem='$nome_final'  WHERE ID_empresa = '$id11' ");
 
-        echo $id12;
+        echo $id11;
 
         echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/perfil_candidato.php'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/perfil_Empresa.php'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem cadastrada com Sucesso.\");
 						</script>
 				
 					";
-      } else{
+    } else{
         //Upload não efetuado com sucesso, exibe a mensagem
         echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_cand.php'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_emp.php'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem não foi cadastrada com Sucesso.\");
 						</script>

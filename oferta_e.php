@@ -82,7 +82,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <a href="InserirOfertas.php"> <span>Inserir Ofertas </span></a>
                     </li>
                     <li>
-                        <a href="Candidaturas_e.html"> <span>Candidaturas </span></a>
+                        <a href="candidatura_emp.php"> <span>Candidaturas </span></a>
                     </li>
                     <li>
                         <a href="oferta_e.php"> <span>Ofertas</span></a>

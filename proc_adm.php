@@ -39,7 +39,7 @@ if($_FILES['arquivo']['error'] != 0){
 $extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 if(array_search($extensao, $_UP['extensoes'])=== false){
     echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_cand.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_adm.php'>
 					<script type=\"text/javascript\">
 						alert(\"A imagem não foi cadastrada extesão inválida.\");
 					</script>
@@ -49,7 +49,7 @@ if(array_search($extensao, $_UP['extensoes'])=== false){
 //Faz a verificação do tamanho do arquivo
 else if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
     echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_cand.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_adm.php'>
 					<script type=\"text/javascript\">
 						alert(\"Arquivo muito grande.\");
 					</script>
@@ -75,16 +75,16 @@ else{
         echo $id12;
 
         echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/perfil_candidato.php'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/perfil_adm.php'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem cadastrada com Sucesso.\");
 						</script>
 				
 					";
-      } else{
+    } else{
         //Upload não efetuado com sucesso, exibe a mensagem
         echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_cand.php'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/projecto/editar_foto_adm.php'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem não foi cadastrada com Sucesso.\");
 						</script>

@@ -229,7 +229,7 @@ $pdoConfig = require_once "config.php";
                                     </div>
       
                                     </div>
-                                      <button type="submit" class="button is-block is-link is-large ">Registar Receita</button>
+                                      <button type="submit" class="button is-block is-link is-large ">Candidatar</button>
                                         </form>
                                   
                                 </div>

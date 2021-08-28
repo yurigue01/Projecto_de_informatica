@@ -48,7 +48,7 @@ $Localidade  = $bus['Localidade'];
 $cp = $bus['Codigo_Postal'];
 $Nif = $bus['Nif'];
 $Habilitacao = $bus['Habilitacoes'];
-
+$imagem = $bus['imagem'];
 
 
 
@@ -73,7 +73,7 @@ $Habilitacao = $bus['Habilitacoes'];
         <ul class="nav user-menu float-right">
             <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+                        <span class="user-img"><img class="rounded-circle" src="imagem/<?php echo"$imagem" ?>" width="40" alt="Admin">
 							<span class="status online"></span></span>
                     <span><?php echo"$username" ?> </span>
                 </a>
@@ -116,6 +116,11 @@ $Habilitacao = $bus['Habilitacoes'];
             </div>
         </div>
     </div>
+
+    <?php
+    echo $imagem;
+
+    ?>
     <div class="page-wrapper">
         <div class="content">
             <div class="row">
@@ -130,7 +135,7 @@ $Habilitacao = $bus['Habilitacoes'];
                         <div class="profile-view">
                             <div class="profile-img-wrap">
                                 <div class="profile-img">
-                                    <a href="#"><img class="avatar" src="imagem/yuri.png" alt=""></a>
+                                    <a href=""><img class="avatar" src="imagem/<?php echo"$imagem" ?>" alt=""> </a>
                                 </div>
                             </div>
                             <div class="profile-basic">

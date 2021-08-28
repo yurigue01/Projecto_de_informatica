@@ -6,15 +6,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 if(isset($_SESSION["loggedin"])){
-    if($_SESSION["loggedin"] == true && $_SESSION["Tipo_utilizador_ID_tipo"]!=2){
-        header("location: perfil_candidato.php");
+    if($_SESSION["loggedin"] == true && $_SESSION["Tipo_utilizador_ID_tipo"]!=1){
+        header("location: perfil_adm.php");
     }
 }
 
 
-
-$id_util=$_SESSION["ID_utilizador"];
-$Candidatar="candidatar";
 
 ?>
 
@@ -63,8 +60,8 @@ $Candidatar="candidatar";
                     <span>Perfil</span>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="perfil_candidato.php">Meu Perfil</a>
-                    <a class="dropdown-item" href="editar_perfil.php">Editar Perfil</a>
+                    <a class="dropdown-item" href="perfil_adm.php">Meu Perfil</a>
+                    <a class="dropdown-item" href="editar_perfil_adm.php">Editar Perfil</a>
                     <a class="dropdown-item" href="alterar_password.php">Alterar Password</a>
                     <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
@@ -73,8 +70,8 @@ $Candidatar="candidatar";
         <div class="dropdown mobile-user-menu float-right">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="perfil_candidato.php">Meu Perfil</a>
-                <a class="dropdown-item" href="editar_perfil.php">Editar Perfil</a>
+                <a class="dropdown-item" href="perfil_adm.php">Meu Perfil</a>
+                <a class="dropdown-item" href="editar_perfil_adm.php">Editar Perfil</a>
                 <a class="dropdown-item" href="alterar_password.php">Alterar Password</a>
                 <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
@@ -86,16 +83,33 @@ $Candidatar="candidatar";
                 <ul>
                     <li class="menu-title">Principal</li>
                     <li>
-                        <a href="perfil_candidato.php"><i class="fa fa-user"></i> <span>Perfil</span></a>
+                        <a href="perfil_adm.php"><i class="fa fa-user"></i> <span>Perfil</span></a>
+                    </li>
+                    <li>
+                        <a href="gerir_utilizador.php"> <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+</svg>
+                            Gerir Utilizador</span></a>
                     </li>
 
                     <li>
-                        <a href="oferta_de_emprego_cand.php"> <span>Ofertas Emprego/Estagio </span></a>
-                    </li>
-                    <li>
-                        <a href="as_m_candi_cand.php"> <span>Candidaturas</span></a>
+                        <a href="gerir_oferta_adm.php"> <span>Gerir Oferta</span></a>
                     </li>
 
+                    <li>
+                        <a href="inserir_area_adm.php"> <span>Gerir Area</span></a>
+                    </li>
+
+
+                    <li>
+                        <a href="inserir_local_adm.php"> <span>Gerir Local</span></a>
+                    </li>
+                    <li>
+                        <a href="list_empresa_adm.php"> <span>Empresa</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -104,7 +118,7 @@ $Candidatar="candidatar";
         <div class="content">
             <div class="row">
                 <div class="col-sm-4 col-3">
-                    <h4 class="page-title">Ofertas de Emprego</h4>
+                    <h4 class="page-title">Lista Empresa</h4>
                 </div>
 
             </div>
@@ -114,18 +128,15 @@ $Candidatar="candidatar";
                         <table class="table table-border table-striped custom-table datatable mb-0">
 
                             <tr>
-                                <th>Titulo</th>
-                                <th>Vagas</th>
-                                <th>Tipo de Oferta</th>
-                                <th>Categoria Salarial</th>
-                                <th>Regime</th>
-                                <th>Empresa</th>
-                                <th>Descrição</th>
-                                <th>Estado</th>
-                                <th>Área</th>
-                                <th>Data de Criação</th>
-                                <th>Local de Trabalho</th>
-
+                                <th>username</th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>NIF</th>
+                                <th>Telefone</th>
+                                <th>Morada</th>
+                                <th>Código Postal</th>
+                                <th>Localidade</th>
+                                <th>Area</th>
 
 
 
@@ -134,34 +145,22 @@ $Candidatar="candidatar";
 
                             <?php
                             require ("config.php");
-
-                            /* definir o charset utilizado na ligação */
-                            $link->set_charset("utf8");
-
-
-                            $oferta="SELECT oferta.*, empresa.* , area.*, tipo_da_oferta.* , local.*  FROM oferta  inner join empresa on oferta.Empresa_ID_empresa = empresa.ID_empresa inner join area on oferta.Area_idArea = area.idArea inner join tipo_da_oferta on oferta.Tipo_da_Oferta_ID_tipo = tipo_da_oferta.ID_tipo inner join local on oferta.Local_ID_local = local.ID_local ";
-                            if($resultado=$link->query($oferta)){
+                            $emp="SELECT empresa.*, area.* FROM empresa  inner join area on empresa.Area_idArea = area.idArea ";
+                            if($resultado=$link->query($emp)){
                                 while ($row=$resultado->fetch_assoc()){
                                     echo'<tr> 
-          <td>'.$row['Titulo'].'</td>
-            <td>'.$row['Vagas'].'</td>
-            <td>'.$row['Tipo'].'</td>
-             <td>'.$row['Categoria_Salarial'].'</td>
-             <td>'.$row['Regime'].'</td>
-             <td>'.$row['Nome'].'</td>
-            <td>'.$row['Descricao'].'</td>
-            <td>'.$row['Estado'].'</td>
-            <td>'.$row['Area'].'</td>
-            <td>'.$row['Data_Criacao'].'</td>
-              <td>'.$row['Local'].'</td>
+            <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> '.$row['username'].'</td>
+            <td>'.$row['Nome'].'</td>
+            <td>'.$row['Email'].'</td> 
+             <td>'.$row['Nif'].'</td>
+              <td>'.$row['Telefone'].'</td>
+             <td>'.$row['Morada'].'</td>
+             <td>'.$row['Codigo_Postal'].'</td>
+              <td>'.$row['Localidade'].'</td>
+               <td>'.$row['Area'].'</td>
             
-   
-           
+<td><a href="eliminar_empresa_adm.php?ID_empresa='.$row['ID_empresa'].'"  class="  fa fa-trash-o red_color"> Eliminar</a></td>
             
-            
-            <td><a href="candidatar_cand.php?acao=add&id='.$row['ID_oferta'].'" class=" "> Candidatar</a></td>
-            
-
             </tr>';
                                 }
                                 $resultado->free();

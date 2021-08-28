@@ -428,7 +428,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <li>
                         <a href="inserir_local_adm.php"> <span>Gerir Local</span></a>
                     </li>
-
+                    <li>
+                        <a href="list_empresa_adm.php"> <span>Empresa</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
